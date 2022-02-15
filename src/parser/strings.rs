@@ -160,7 +160,7 @@ pub fn special_url(input: Span) -> PResult<SassString> {
         string_part_interpolation,
         map(selector_string, StringPart::Raw),
         map(
-            map_res(is_a("\":.;,!+/="), input_to_string),
+            map_res(is_a("\"':.;,!+/=#&"), input_to_string),
             StringPart::Raw,
         ),
     )))(input)?;
